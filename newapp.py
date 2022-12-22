@@ -30,6 +30,6 @@ def run_query(view_name):
     server.views.populate_image(our_view)
     view_image = our_view.image
     return view_image
-view_image = run_query('our_workbook')
+view_image = run_query('v')
 st.image(view_image, width=800)
       
