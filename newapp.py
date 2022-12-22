@@ -1,9 +1,15 @@
 import streamlit as st
 import tableauserverclient as TSC
 # Establish the connection
+
 st.markdown ("#### Dashboard Il")
-server_url = 'https://prod-useast-a.online.tableau.com'user = 'amulya.s.nidhi@kipi.bi'password = 'Kipithon@123'site = 'Site21'
-tableau_auth = TSC.TableauAuth(username=user, password=password, site_id=site)server = TSC.Server(server_url, use_server_version=True)
+server_url = 'https://prod-useast-a.online.tableau.com'
+user = 'amulya.s.nidhi@kipi.bi'
+password = 'Kipithon@123'
+site = 'Site21'
+
+tableau_auth = TSC.TableauAuth(username=user, password=password, site_id=site)
+server = TSC.Server(server_url, use_server_version=True)
 
 # Fetch the dashboards/charts
 @st.experimental_memo(ttl=1200)
