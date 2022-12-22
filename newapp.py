@@ -13,7 +13,7 @@ server = TSC.Server(server_url, use_server_version=True)
 
 # Fetch the dashboards/charts
 @st.experimental_memo(ttl=1200)
-def run_query(view_name):
+def run_query():
   with server.auth.sign_in(tableau_auth):
 
         # Get all workbooks.
