@@ -1,3 +1,4 @@
 altair
 pandas
 streamlit
+tableauserverclient==2.3
