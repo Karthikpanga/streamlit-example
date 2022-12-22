@@ -5,9 +5,7 @@ import tableauserverclient as TSC
 
 
 # Set up connection.
-
-
-= 'https://prod-useast-a.online.tableau.com'
+server_url = 'https://prod-useast-a.online.tableau.com'
 user = 'amulya.s.nidhi@kipi.bi'
 password = 'Kipithon@123'
 site = 'Site21'
