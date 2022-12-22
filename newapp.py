@@ -13,7 +13,7 @@ server = TSC.Server(server_url, use_server_version=True)
 
 # Fetch the dashboards/charts
 @st.experimental_memo(ttl=1200)
-def run_query(view_image):
+def run_query(view_name):
   with server.auth.sign_in(tableau_auth):
     workbooks, pagination_item = server.workbooks.get()
     for w in workbooks:
