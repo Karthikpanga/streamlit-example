@@ -5,12 +5,15 @@ import tableauserverclient as TSC
 
 
 # Set up connection.
-tableau_auth = TSC.PersonalAccessTokenAuth(
-    st.secrets["tableau"]["token_name"],
-    st.secrets["tableau"]["personal_access_token"],
-    st.secrets["tableau"]["server_url"],
-)
-server = TSC.Server(st.secrets["tableau"]["site_id"], use_server_version=True)
+
+
+= 'https://prod-useast-a.online.tableau.com'
+user = 'amulya.s.nidhi@kipi.bi'
+password = 'Kipithon@123'
+site = 'Site21'
+
+tableau_auth = TSC.TableauAuth(username=user, password=password, site_id=site)
+server = TSC.Server(server_url, use_server_version=True)
 
 
 # Get various data.
