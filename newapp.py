@@ -20,7 +20,7 @@ def run_query(view_name):
       if w.name == 'trydashboard':
         our_workbook = w
         break
-# Get views for BHARAT_REFINERY_DASHBOARD_FINAL workbook.
+# Get views for trydashboard workbook.
     server.workbooks.populate_views(our_workbook)
     for v in our_workbook.views:
       if view_name == v.name:
@@ -30,6 +30,7 @@ def run_query(view_name):
     server.views.populate_image(our_view)
     view_image = our_view.image
     return view_image
-view_image = run_query('our_view')
-st.image(view_image, width=800)
+print(view_image)
+#view_image = run_query('our_view')
+#st.image(view_image, width=800)
       
