@@ -38,8 +38,7 @@ def check_password():
         return True
 
 if check_password():
-    if  streamlit1 == "username":
-        
+    if  st.session_state["username"] == streamlit1:
         st.markdown ("#### Dashboard")
         server_url = 'https://prod-useast-a.online.tableau.com'
         user = 'amulya.s.nidhi@kipi.bi'
@@ -71,7 +70,8 @@ if check_password():
     
         view_image = run_query('MyDash')
         st.image(view_image, width=800)
-    elif "username" == streamlit2:
+    elif st.session_state["username"] == streamlit1:
+        
         st.markdown ("#### Dashboard")
         server_url = 'https://prod-useast-a.online.tableau.com'
         user = 'amulya.s.nidhi@kipi.bi'
