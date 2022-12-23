@@ -30,7 +30,7 @@ def check_password():
         st.text_input(
             "Password", type="password", on_change=password_entered, key="password"
         )
-        st.button("Click me")
+      
         st.error("😕 User not known or password incorrect")
         return False
     else:
