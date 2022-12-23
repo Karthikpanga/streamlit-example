@@ -38,8 +38,7 @@ def check_password():
         return True
 
 if check_password():
-    st.button("Click me")
-    st.markdown ("#### Dashboard Il")
+    st.markdown ("#### Dashboard")
     server_url = 'https://prod-useast-a.online.tableau.com'
     user = 'amulya.s.nidhi@kipi.bi'
     password = 'Kipithon@123'
