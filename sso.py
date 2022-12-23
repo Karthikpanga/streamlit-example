@@ -38,7 +38,7 @@ def check_password():
         return True
 
 if check_password():
-    if "username" == streamlit1:
+    if  streamlit1 == "username":
         
         st.markdown ("#### Dashboard")
         server_url = 'https://prod-useast-a.online.tableau.com'
