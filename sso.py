@@ -30,6 +30,7 @@ def check_password():
         st.text_input(
             "Password", type="password", on_change=password_entered, key="password"
         )
+        st.button("Click me")
         st.error("😕 User not known or password incorrect")
         return False
     else:
@@ -37,6 +38,7 @@ def check_password():
         return True
 
 if check_password():
+    st.button("Click me")
     st.markdown ("#### Dashboard Il")
     server_url = 'https://prod-useast-a.online.tableau.com'
     user = 'amulya.s.nidhi@kipi.bi'
