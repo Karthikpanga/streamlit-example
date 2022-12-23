@@ -13,7 +13,7 @@ def check_password():
         ):
             st.session_state["password_correct"] = True
             del st.session_state["password"]  # don't store username + password
-            del st.session_state["username"]
+            #del st.session_state["username"]
         else:
             st.session_state["password_correct"] = False
 
@@ -38,7 +38,7 @@ def check_password():
         return True
 
 if check_password():
-    if  st.secrets["passwords"] = 'streamlit1':
+    if  st.session_state["username"] == 'streamlit1':
         st.markdown ("#### Dashboard")
         server_url = 'https://prod-useast-a.online.tableau.com'
         user = 'amulya.s.nidhi@kipi.bi'
