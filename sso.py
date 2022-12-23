@@ -70,7 +70,7 @@ if check_password():
     
         view_image = run_query('MyDash')
         st.image(view_image, width=800)
-    elif 'streamlit2' in st.secrets["passwords"]:
+    elif st.session_state["username"] == 'streamlit2':
         
         st.markdown ("#### Dashboard")
         server_url = 'https://prod-useast-a.online.tableau.com'
