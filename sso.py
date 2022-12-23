@@ -101,9 +101,9 @@ if check_password():
                 view_image = our_view.image
                 return view_image
     
-        view_image = run_query(mg)
+        view_image = run_query('newdash')
         st.image(view_image, width=800)
     else:
-        print ("bye!")
+        st.write("bye!")
         
     
