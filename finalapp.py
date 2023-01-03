@@ -11,9 +11,8 @@ from streamlit_option_menu import option_menu
 with st.sidebar:
     choose = option_menu("App Gallery", ['Tableau', 'ml'])
     if choose == 'Tableau':
-        placeholder = st.empty()
         if 'cur' not in st.session_state:
-            with placeholder.form("login-form", clear_on_submit=True):
+            
                 def check_password():
                     """Returns `True` if the user had a correct password."""
 
