@@ -113,8 +113,8 @@ if check_password():
         st.write("bye!")
         
  # set_page_config needs to be the first Streamlit command in your script
-st.set_page_config(layout="wide")
-st.title("FOREX Forecasting Models Monitoring")
+#st.set_page_config(layout="wide")
+#st.title("FOREX Forecasting Models Monitoring")
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
