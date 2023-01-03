@@ -128,8 +128,7 @@ with st.sidebar:
 # Uses st.experimental_singleton to only run once.
     elif choose == 'ml':
         if 'cur' not in st.session_state:
-            with placeholder.form("login-form", clear_on_submit=True):
-                @st.experimental_singleton
+            @st.experimental_singleton
                 def init_connection():
                     return snowflake.connector.connect(
                         **st.secrets["snowflake"], client_session_keep_alive=True
@@ -208,5 +207,6 @@ with st.sidebar:
 
                 st.line_chart(df, x="date",
                    y=["Actual", "Prediction"])
+                
 
     
