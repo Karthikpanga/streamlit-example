@@ -126,6 +126,7 @@ with st.sidebar:
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
     elif choose == 'ml':
+        placeholder = st.empty()
         if 'cur' not in st.session_state:
             with placeholder.form("ml-form", clear_on_submit=True):
                 @st.experimental_singleton
