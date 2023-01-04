@@ -128,7 +128,8 @@ with st.sidebar:
     elif choose == 'ml':
         
         if 'cur' not in st.session_state:
-            with st.form("Application-form", clear_on_submit=False)
+            with st.form("Application-form", clear_on_submit=False):
+                
                 @st.experimental_singleton
                 def init_connection():
                     return snowflake.connector.connect(
