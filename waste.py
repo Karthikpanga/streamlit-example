@@ -88,7 +88,7 @@ if check_password():
         st.write("bye!")
                     
         
-    elif choose == 'ml':
+elif choose == 'ml':
         
         if 'cur' not in st.session_state:
             with st.form("Application-form", clear_on_submit=False):
