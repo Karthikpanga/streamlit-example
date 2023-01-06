@@ -54,7 +54,7 @@ elif choose == 'ML':
         #rows = run_query("select * from ML;")
 
 
-        actual=run_query("select ACTUAL from ACTVSPREC limit 5;")
+        #actual=run_query("select ACTUAL from ACTVSPREC limit 5;")
         prediction=run_query("select PREDICTIONS from ACTVSPREC limit 5;")
         date=run_query("select DDATE from ACTVSPREC limit 5 ;")
 
@@ -62,42 +62,23 @@ elif choose == 'ML':
         # Create DataFrame from multiple lists
 
 
-        df2=pd.DataFrame(list(zip(date,actual,prediction)),columns=['date','actual','prediction'])
+        df2=pd.DataFrame(list(zip(date,prediction)),columns=['date','prediction'])
         st.write(df2)
 
         #chart_data = pd.DataFrame(
          #   np.random.randn(20, 3),
          #   columns=['a', 'b', 'c'])
 
-        #st.line_chart(rows)
-        line_fig = px.line(
-           df2,
-           x="date",
-           y=["actual", "prediction"],
-           title="Actual Values vs Forecasted values",
-
-            )
-        #legend_names = {"sales": "Actual Sales", "sales_forecast": "Forecasted Sales"}
-        line_fig.update_layout(
-           xaxis=dict(showgrid=False),
-           legend=dict(
-               yanchor="top",
-               y=0.99,
-               xanchor="right",
-               x=0.99
-           ),
-           title_x=0.5,
-           height=600
-            )
+       
 
         # passing in the Plotly graph object to Streamlit
         #st.plotly_chart(line_fig, use_container_width=True)
 
 
-        df = pd.DataFrame({
-          'date': ['12/28/2022','12/29/2022','12/30/2022','12/31/2022','01/1/2023','01/2/2023', '01/3/2023', '01/4/2023','01/5/2023','01/6/2023'],
-           'Actual': [ 46.53, 46.53,  46.54, 46.64,46.645,46.62,46.665,46.63,46.7,46.68],
-                'Prediction':[ 46.52, 46.530, 46.52, 46.54,46.66,46.643,46.624,46.666,46.619,46.721]
+        df5 = pd.DataFrame({
+          'date': ['12/23/2022','12/26/2022','12/27/2022','12/28/2022','12/29/2022','12/30/2022', '01/2/2023', '01/3/2023','01/4/2023','01/5/2023'],
+           'Actual': [  82.79, 82.55, 82.73, 82.74,82.83,82.75,82.73,82.71,82.51,82.81],
+                'Prediction':[ 82.78, 82.65, 82.83, 82.736,82.758,82.717,82.745,82.774,82.641,82.765]
             })
 
 
@@ -108,7 +89,7 @@ elif choose == 'ML':
             # Print results.
 
 
-        st.line_chart(df, x="date",
+        st.line_chart(df5, x="date",
            y=["Actual", "Prediction"])
 
     elif add_selectbox=='EURO-USD':
@@ -137,50 +118,31 @@ elif choose == 'ML':
         #rows = run_query("select * from ML;")
 
 
-        actual=run_query("select ACTUAL from ACTVSPREC limit 5;")
-        prediction=run_query("select PREDICTIONS from ACTVSPREC limit 5;")
-        date=run_query("select DDATE from ACTVSPREC limit 5 ;")
+        #actual=run_query("select ACTUAL from ACTVSPREC limit 5;")
+        prediction=run_query("select PREDICTIONS from ACTVSPRECEURO limit 5;")
+        date=run_query("select DDATE from ACTVSPRECEURO limit 5 ;")
 
 
         # Create DataFrame from multiple lists
 
 
-        df2=pd.DataFrame(list(zip(date,actual,prediction)),columns=['date','actual','prediction'])
-        st.write(df2)
+        df3=pd.DataFrame(list(zip(date,prediction)),columns=['date','prediction'])
+        st.write(df3)
 
         #chart_data = pd.DataFrame(
          #   np.random.randn(20, 3),
          #   columns=['a', 'b', 'c'])
 
-        #st.line_chart(rows)
-        line_fig = px.line(
-           df2,
-           x="date",
-           y=["actual", "prediction"],
-           title="Actual Values vs Forecasted values",
-
-            )
-        #legend_names = {"sales": "Actual Sales", "sales_forecast": "Forecasted Sales"}
-        line_fig.update_layout(
-           xaxis=dict(showgrid=False),
-           legend=dict(
-               yanchor="top",
-               y=0.99,
-               xanchor="right",
-               x=0.99
-           ),
-           title_x=0.5,
-           height=600
-            )
+        
 
         # passing in the Plotly graph object to Streamlit
         #st.plotly_chart(line_fig, use_container_width=True)
 
 
-        df = pd.DataFrame({
-          'date': ['12/28/2022','12/29/2022','12/30/2022','12/31/2022','01/1/2023','01/2/2023', '01/3/2023', '01/4/2023','01/5/2023','01/6/2023'],
-           'Actual': [ 46.53, 46.53,  46.54, 46.64,46.645,46.62,46.665,46.63,46.7,46.68],
-                'Prediction':[ 46.52, 46.530, 46.52, 46.54,46.66,46.643,46.624,46.666,46.619,46.721]
+        df6 = pd.DataFrame({
+          'date': ['12/23/2022','12/26/2022','12/27/2022','12/28/2022','12/29/2022','12/30/2022', '01/2/2023', '01/3/2023','01/4/2023','01/5/2023'],
+           'Actual': [ 1.0714, 1.1035, 1.0728, 1.1008,1.0761,1.0802,1.0702,1.0436,1.0609,1.1203],
+                'Prediction':[ 1.0614, 1.0635, 1.0638, 1.0608,1.0661,1.0702,1.0662,1.0546,1.0599,1.0603]
             })
 
 
@@ -191,7 +153,7 @@ elif choose == 'ML':
             # Print results.
 
 
-        st.line_chart(df, x="date",
+        st.line_chart(df6, x="date",
            y=["Actual", "Prediction"])
     else:
          # Initialize connection.
@@ -219,50 +181,31 @@ elif choose == 'ML':
         #rows = run_query("select * from ML;")
 
 
-        actual=run_query("select ACTUAL from ACTVSPREC limit 5;")
-        prediction=run_query("select PREDICTIONS from ACTVSPREC limit 5;")
-        date=run_query("select DDATE from ACTVSPREC limit 5 ;")
+        #actual=run_query("select ACTUAL from ACTVSPREC limit 5;")
+        prediction=run_query("select PREDICTIONS from ACTVSPRECAD limit 5;")
+        date=run_query("select DDATE from ACTVSPRECAD limit 5 ;")
 
 
         # Create DataFrame from multiple lists
 
 
-        df2=pd.DataFrame(list(zip(date,actual,prediction)),columns=['date','actual','prediction'])
-        st.write(df2)
+        df4=pd.DataFrame(list(zip(date,prediction)),columns=['date','prediction'])
+        st.write(df4)
 
         #chart_data = pd.DataFrame(
          #   np.random.randn(20, 3),
          #   columns=['a', 'b', 'c'])
 
-        #st.line_chart(rows)
-        line_fig = px.line(
-           df2,
-           x="date",
-           y=["actual", "prediction"],
-           title="Actual Values vs Forecasted values",
-
-            )
-        #legend_names = {"sales": "Actual Sales", "sales_forecast": "Forecasted Sales"}
-        line_fig.update_layout(
-           xaxis=dict(showgrid=False),
-           legend=dict(
-               yanchor="top",
-               y=0.99,
-               xanchor="right",
-               x=0.99
-           ),
-           title_x=0.5,
-           height=600
-            )
+        
 
         # passing in the Plotly graph object to Streamlit
         #st.plotly_chart(line_fig, use_container_width=True)
 
 
-        df = pd.DataFrame({
-          'date': ['12/28/2022','12/29/2022','12/30/2022','12/31/2022','01/1/2023','01/2/2023', '01/3/2023', '01/4/2023','01/5/2023','01/6/2023'],
-           'Actual': [ 46.53, 46.53,  46.54, 46.64,46.645,46.62,46.665,46.63,46.7,46.68],
-                'Prediction':[ 46.52, 46.530, 46.52, 46.54,46.66,46.643,46.624,46.666,46.619,46.721]
+        df7 = pd.DataFrame({
+          'date': ['12/23/2022','12/26/2022','12/27/2022','12/28/2022','12/29/2022','12/30/2022', '01/2/2023', '01/3/2023','01/4/2023','01/5/2023'],
+           'Actual': [ 1.3603, 1.3571, 1.3631, 1.3591,1.2946,1.3000,1.4072,1.3700,1.3482,1.3601],
+                'Prediction':[ 1.3598, 1.3583, 1.3522, 1.3608,1.3546,1.3549,1.3572,1.3669,1.3476,1.3503]
             })
 
 
@@ -273,7 +216,7 @@ elif choose == 'ML':
             # Print results.
 
 
-        st.line_chart(df, x="date",
+        st.line_chart(df7, x="date",
            y=["Actual", "Prediction"])
 elif choose == 'TABLEAU':
     def check_password():
@@ -312,8 +255,8 @@ elif choose == 'TABLEAU':
             return True
     
     if check_password():
-        if st.session_state["username"] == 'craig':
-            server_url = 'https://prod-apnortheast-a.online.tableau.com'
+        if st.session_state["username"] == 'Craig':
+            server_url = 'https://prod-apnortheast-a.online.tableau.com/'
             user = 'panga.r.karthik@kipi.bi'
             password = 'Kipithon@123'
             site = 'Site22'
@@ -344,8 +287,8 @@ elif choose == 'TABLEAU':
                     return view_image
             view_image = run_query('Craig Dashboard')
             st.image(view_image, width=800)
-        elif st.session_state["username"] == 'jhony':
-            server_url = 'https://prod-apnortheast-a.online.tableau.com'
+        elif st.session_state["username"] == 'Jhony':
+            server_url = 'https://prod-apnortheast-a.online.tableau.com/'
             user = 'panga.r.karthik@kipi.bi'
             password = 'Kipithon@123'
             site = 'Site22'
