@@ -1,5 +1,7 @@
-tableauserverclient==2020.3
-streamlit
--r https://raw.githubusercontent.com/snowflakedb/snowflake-connector-python/v2.7.9/tested_requirements/requirements_39.reqs
-plotly.express 
+tableauserverclient==0.8.1
 streamlit_option_menu
+snowflake-connector-python
+pandas
+streamlit
+-r https://raw.githubusercontent.com/snowflakedb/snowflake-connector-python/v2.7.9/tested_requirements/requirements_39.reqs 
+plotly.express
